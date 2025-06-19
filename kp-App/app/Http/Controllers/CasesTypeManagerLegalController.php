@@ -27,7 +27,7 @@ class CasesTypeManagerLegalController extends Controller
         $cases = $query->get();
 
         // Ambil daftar jenis_cases unik untuk dropdown
-        $jenisCasesList = Cases::where('departement', 'PurchDept')->select('jenis_cases')->distinct()->pluck('jenis_cases');
+        $jenisCasesList = Cases::where('departement', 'LegalDept')->select('jenis_cases')->distinct()->pluck('jenis_cases');
 
         return view('layouts.LegalDept.Manager.casesType.index', compact('user', 'cases', 'filterJenisCases', 'jenisCasesList'));
         

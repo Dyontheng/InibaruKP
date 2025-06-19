@@ -14,7 +14,7 @@ class CasesDirekturFinanceDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-         $cases = Cases::whereIn('departement', ['financeDept'])->get();
+         $cases = Cases::whereIn('departement', ['FinanceDept'])->get();
         return view('layouts.FinanceDept.Direktur.cases.index', compact('user','cases'));
     }
 
