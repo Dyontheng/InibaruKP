@@ -9,7 +9,7 @@ use App\Models\Cases;
 
 class CasesTypeStaffLegalController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
         $cases = Cases::all();

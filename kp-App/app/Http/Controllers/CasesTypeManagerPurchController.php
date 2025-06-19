@@ -21,9 +21,6 @@ class CasesTypeManagerPurchController extends Controller
         // Jika filter dipilih, tambahkan filter jenis cases
         if ($filterJenisCases) {
             $query->where('jenis_cases', $filterJenisCases);
-        } else {
-            // Jika tidak memilih filter, tampilkan data kosong
-            $query->whereRaw('1 = 0'); // atau bisa pakai ->limit(0)
         }
 
         // Ambil data hasil filter

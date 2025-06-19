@@ -13,8 +13,8 @@ class CasesManagerLegalDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.LegalDept.Manager.cases.index', compact('user'));
+        $cases = Cases::whereIn('departement', ['LegalDept',])->get();
+        return view('layouts.LegalDept.Manager.cases.index', compact('user','cases'));
     }
 
     /**

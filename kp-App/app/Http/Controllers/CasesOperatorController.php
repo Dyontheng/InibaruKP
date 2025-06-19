@@ -15,7 +15,7 @@ class CasesOperatorController extends Controller
     {
         $user = Auth::user();
         $cases = Cases::all();
-        // $documents = Document::all();
+        
         return view('layouts.Operator.cases.index', compact('user','cases'));
     }
 

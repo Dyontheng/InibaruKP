@@ -13,8 +13,8 @@ class CasesStaffExportDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.ExportDept.Staff.cases.index', compact('user'));
+        $cases = Cases::whereIn('departement', ['ExportDept'])->get();
+        return view('layouts.ExportDept.Staff.cases.index', compact('user','cases'));
     }
 
     /**

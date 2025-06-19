@@ -14,8 +14,8 @@ class CasesManagerFinanceDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.FinanceDept.Manager.cases.index', compact('user'));
+        $cases = Cases::whereIn('departement', ['financeDept'])->get();
+        return view('layouts.FinanceDept.Manager.cases.index', compact('user','cases'));
     }
 
     /**

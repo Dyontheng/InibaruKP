@@ -14,8 +14,8 @@ class CasesManagerExportDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.ExportDept.Manager.cases.index', compact('user'));
+       $cases = Cases::whereIn('departement', ['ExportDept'])->get();
+        return view('layouts.ExportDept.Manager.cases.index', compact('user','cases'));
     
     }
 

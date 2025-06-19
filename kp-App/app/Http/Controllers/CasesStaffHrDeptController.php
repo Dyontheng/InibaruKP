@@ -13,8 +13,8 @@ class CasesStaffHrDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.HrDept.Direktur.cases.index', compact('user'));
+       $cases = Cases::whereIn('departement', ['HrDept',])->get();
+        return view('layouts.HrDept.Direktur.cases.index', compact('user','cases'));
     }
 
     /**

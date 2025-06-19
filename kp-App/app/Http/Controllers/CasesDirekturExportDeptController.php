@@ -14,8 +14,8 @@ class CasesDirekturExportDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        
-        return view('layouts.ExportDept.Direktur.cases.index', compact('user',''));
+        $cases = Cases::whereIn('departement', ['ExportDept'])->get();
+        return view('layouts.ExportDept.Direktur.cases.index', compact('user','cases'));
     }
 
     /**S
