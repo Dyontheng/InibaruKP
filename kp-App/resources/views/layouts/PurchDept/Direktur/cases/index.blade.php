@@ -22,34 +22,33 @@
                                 <th>Cases Hope</th>
                                 <th>Document</th>
                                 <th>Type Name</th>
+                                <th>Departement</th>
                             </tr>
                         </thead>
-                        {{-- <tbody>
-                            @forelse ($documents as $dokumen)
+                       <tbody>
+                            @forelse ($cases as $case)
                                 <tr>
-                                    <td>{{ $dokumen->no_document }}</td>
-                                    <td>{{ $dokumen->name_document }}</td>
-                                    <td>{{ $dokumen->document_type }}</td>
-                                    <td>{{ $dokumen->location }}</td>
-                                    <td>{{ $dokumen->effective_date }}</td>
-                                    <td>{{ $dokumen->expired_date }}</td>
-                                    <td>{{ $dokumen->reminder_days }}</td>
-                                    <td>{{ $dokumen->departement }}</td>
+                                    <td>{{ $case->no_cases }}</td>
+                                    <td>{{ $case->name_cases}}</td>
+                                    <td>{{ $case->date_cases }}</td>
+                                    <td>{{ $case->site_cases }}</td>
+                                    <td>{{ $case->status_cases }}</td>
+                                    <td>{{ $case->info_cases }}</td>
                                     <td>
-                                        <a href="{{ route('dokumenAdmin.edit', $dokumen->id) }}" class="btn btn-primary btn-sm mb-2">Edit</a>
-                                        <form action="{{ route('dokumenAdmin.destroy', $dokumen->id) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus dokumen ini?')">Delete</button>
-                                        </form>
-                                    </td>
+                                            <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}"
+                                                target="_blank">
+                                                {{ basename($case->doc_cases) }}
+                                            </a>
+                                        </td>
+                                    <td>{{ $case->jenis_cases }}</td>
+                                    <td>{{ $case->departement }}</td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="9" class="text-center">Tidak ada dokumen tersedia.</td>
                                 </tr>
                             @endforelse
-                        </tbody> --}}
+                        </tbody>
                         
                     </table>
                     {{-- {{ $anggotas->links() }} --}}

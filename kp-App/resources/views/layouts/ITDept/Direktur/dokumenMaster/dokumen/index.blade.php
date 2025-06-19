@@ -20,7 +20,7 @@
                                 <th scope="col">Effective Date</th>
                                 <th scope="col">Expired Date</th>
                                 <th scope="col">Reminder Day</th>
-                                <th scope="col">Action</th>
+                            
                             </tr>
                         </thead>
                         <tbody>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Cases;
+
 
 class CasesStaffPurchDeptController extends Controller
 {
@@ -12,8 +14,8 @@ class CasesStaffPurchDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.PurchDept.Staff.cases.index', compact('user'));
+        $cases = Cases::whereIn('departement', ['PurchDept'])->get();
+        return view('layouts.PurchDept.Staff.cases.index', compact('user','cases'));
     }
 
     /**

@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('casesAdmin.store') }}" method="POST">
+                        <form action="{{ route('casesAdmin.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -78,14 +78,14 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="doc_cases">Cases Documents</label>
-                                <input type="file" class="form-control" @error('doc_cases') is-invalid @enderror"
-                                    id="doc_cases" name="doc_cases" value="{{ old('doc_cases') }}" accept=".pdf, .doc">
-                                @error('doc_cases')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+                           <div class="form-group">
+                            <label for="doc_cases">Document Cases</label>
+                            <input type="file" class="form-control @error('doc_cases') is-invalid @enderror"
+                                id="doc_cases" name="doc_cases" value="{{ old('doc_cases') }}" accept=".pdf, .doc">
+                            @error('doc_cases')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <div class="mb-3">
                             <label for="jenis_cases" class="form-label">Jenis cases</label> <br>

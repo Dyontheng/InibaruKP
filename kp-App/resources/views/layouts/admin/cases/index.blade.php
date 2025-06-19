@@ -48,7 +48,12 @@
                                     <td>{{ $case->site_cases }}</td>
                                     <td>{{ $case->status_cases }}</td>
                                     <td>{{ $case->info_cases }}</td>
-                                    <td>{{ $case->doc_cases }}</td>
+                                    <td>
+                                            <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}"
+                                                target="_blank">
+                                                {{ basename($case->doc_cases) }}
+                                            </a>
+                                        </td>
                                     <td>{{ $case->jenis_cases }}</td>
                                     <td>{{ $case->departement }}</td>
                                     <td>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Cases;
+use Carbon\Carbon;
 
 class CasesDirekturExportDeptController extends Controller
 {
@@ -12,8 +14,8 @@ class CasesDirekturExportDeptController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // $documents = Document::all();
-        return view('layouts.ExportDept.Direktur.cases.index', compact('user'));
+        
+        return view('layouts.ExportDept.Direktur.cases.index', compact('user',''));
     }
 
     /**S

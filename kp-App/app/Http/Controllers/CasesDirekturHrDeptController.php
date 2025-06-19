@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Cases;
+use Carbon\Carbon;
 
 class CasesDirekturHrDeptController extends Controller
 {

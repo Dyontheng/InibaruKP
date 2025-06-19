@@ -9,16 +9,19 @@
             <div class="card-body py-3">
                 <h1>Cases Type</h1>
 
-                 <form method="GET" action="{{ route('casesTypeDirekturPurch.index') }}">
+               <form method="GET" action="{{ route('casesTypeDirekturPurch.index') }}">
                     <div class="form-group mb-3">
                         <label for="filter">Filter berdasarkan Jenis Cases:</label>
                         <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
                             <option value="">-- Pilih Jenis Cases --</option>
-                            <option value="Pengadilan" {{ request('filter') == 'Pengadilan' ? 'selected' : '' }}>Pengadilan</option>
-                            <option value="Lahan" {{ request('filter') == 'Lahan' ? 'selected' : '' }}>Lahan</option>
-                            <option value="Operasional" {{ request('filter') == 'Operasional' ? 'selected' : '' }}>Operasional
-                            </option>
-                            <option value="Rapat" {{ request('filter') == 'Rapat' ? 'selected' : '' }}>Rapat</option>
+                            @php
+                                $jenisOptions = ['Pengadilan', 'Lahan', 'Operasional', 'Rapat'];
+                            @endphp
+                            @foreach ($jenisOptions as $jenis)
+                                <option value="{{ $jenis }}" {{ request('filter') == $jenis ? 'selected' : '' }}>
+                                    {{ $jenis }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </form>
@@ -46,7 +49,12 @@
                                         <td>{{ $case->site_cases }}</td>
                                         <td>{{ $case->status_cases }}</td>
                                         <td>{{ $case->info_cases }}</td>
-                                        <td>{{ $case->doc_cases }}</td>
+                                        <td>
+                                            <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}"
+                                                target="_blank">
+                                                {{ basename($case->doc_cases) }}
+                                            </a>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Cases;
+use Carbon\Carbon;
 
 class CasesOperatorController extends Controller
 {
@@ -12,8 +14,9 @@ class CasesOperatorController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $cases = Cases::all();
         // $documents = Document::all();
-        return view('layouts.Operator.cases.index', compact('user'));
+        return view('layouts.Operator.cases.index', compact('user','cases'));
     }
 
     /**
