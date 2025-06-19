@@ -6,27 +6,8 @@
         @endif
 
         <div class="card-body py-3">
-            {{-- <h1>Anggota {{ $ukm->nama_ukm }}</h1> --}}
             <h1>Dokumen Cases</h1>
             <div class="d-sm-flex align-items-center justify-content-between mb-0">
-
-                {{-- <form method="GET" action="{{ route('dokumenTypeAdmin.index') }}">
-                    <div class="form-group mb-3">
-                        <label for="filter">Filter berdasarkan Jenis Dokumen:</label>
-                        <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
-                            <option value="">-- Pilih Jenis Dokumen --</option>
-                            <option value="Audit" {{ request('filter') == 'Audit' ? 'selected' : '' }}>Audit</option>
-                            <option value="Barang" {{ request('filter') == 'Barang' ? 'selected' : '' }}>Barang</option>
-                            <option value="Keuangan" {{ request('filter') == 'Keuangan' ? 'selected' : '' }}>Keuangan
-                            </option>
-                            <option value="Jadwal" {{ request('filter') == 'Jadwal' ? 'selected' : '' }}>Jadwal</option>
-                            <option value="IzinOperasional" {{ request('filter') == 'IzinOperasional' ? 'selected' : '' }}>
-                                Izin Operasional</option>
-                            <option value="Rapat" {{ request('filter') == 'Rapat' ? 'selected' : '' }}>Rapat</option>
-                        </select>
-                    </div>
-                </form> --}}
-
                 <div class="table-responsive mt-3">
                     <table class="display" id="basic-1">
                         <thead>
@@ -39,34 +20,32 @@
                                 <th>Cases Hope</th>
                                 <th>Document</th>
                                 <th>Type Name</th>
+                                <th>Departement</th>
                             </tr>
                         </thead>
-                        {{-- <tbody>
-                            @forelse ($documents as $dokumen)
+                        <tbody>
+                            @forelse ($cases as $case)
                                 <tr>
-                                    <td>{{ $dokumen->no_document }}</td>
-                                    <td>{{ $dokumen->name_document }}</td>
-                                    <td>{{ $dokumen->document_type }}</td>
-                                    <td>{{ $dokumen->location }}</td>
-                                    <td>{{ $dokumen->effective_date }}</td>
-                                    <td>{{ $dokumen->expired_date }}</td>
-                                    <td>{{ $dokumen->reminder_days }}</td>
-                                    <td>{{ $dokumen->departement }}</td>
+                                    <td>{{ $case->no_cases }}</td>
+                                    <td>{{ $case->name_cases }}</td>
+                                    <td>{{ $case->date_cases }}</td>
+                                    <td>{{ $case->site_cases }}</td>
+                                    <td>{{ $case->status_cases }}</td>
+                                    <td>{{ $case->info_cases }}</td>
                                     <td>
-                                        <a href="{{ route('dokumenAdmin.edit', $dokumen->id) }}" class="btn btn-primary btn-sm mb-2">Edit</a>
-                                        <form action="{{ route('dokumenAdmin.destroy', $dokumen->id) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus dokumen ini?')">Delete</button>
-                                        </form>
+                                        <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}" target="_blank">
+                                            {{ basename($case->doc_cases) }}
+                                        </a>
                                     </td>
+                                    <td>{{ $case->jenis_cases }}</td>
+                                    <td>{{ $case->departement }}</td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="9" class="text-center">Tidak ada dokumen tersedia.</td>
                                 </tr>
                             @endforelse
-                        </tbody> --}}
+                        </tbody>
 
                     </table>
                     {{-- {{ $anggotas->links() }} --}}
