@@ -12,17 +12,23 @@ class CasesTypeDirekturExportController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $filter = $request->query('filter');
-        $cases = Cases::all();
+        $filterJenisCases = $request->query('filter');
 
+        // Inisialisasi query dengan filter departemen
+        $query = Cases::where('departement', 'ExportDept');
+
+        // Jika filter dipilih, tambahkan filter jenis cases
+        if ($filterJenisCases) {
+            $query->where('jenis_cases', $filterJenisCases);
         
-        // Jika filter dipilih, ambil hanya dokumen dengan document_type tertentu
-        if ($filter) {
-            $cases = cases::where('jenis_data', $filter)->get();
-        } else {
-            // Kalau tidak ada filter, kosongkan hasil
-            $cases = collect(); // koleksi kosong
         }
-        return view('layouts.ExportDept.Direktur.casesType.index', compact('user', 'cases'));
+
+        // Ambil data hasil filter
+        $cases = $query->get();
+
+        // Ambil daftar jenis_cases unik untuk dropdown
+        $jenisCasesList = Cases::where('departement', 'ExportDept')->select('jenis_cases')->distinct()->pluck('jenis_cases');
+
+        return view('layouts.ExportDept.Direktur.casesType.index', compact('user', 'cases', 'filterJenisCases', 'jenisCasesList'));
     }
 }

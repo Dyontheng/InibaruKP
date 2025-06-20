@@ -12,7 +12,24 @@ class CasesTypeDirekturITController extends Controller
      public function index(Request $request)
     {
         $user = Auth::user();
-        $cases = Cases::all();
-        return view('layouts.ITDept.Direktur.casesType.index', compact('user', 'cases'));
+        
+        $filterJenisCases = $request->query('filter');
+
+        // Inisialisasi query dengan filter departemen
+        $query = Cases::where('departement', 'ITDept');
+
+        // Jika filter dipilih, tambahkan filter jenis cases
+        if ($filterJenisCases) {
+         
+        }
+
+        // Ambil data hasil filter
+        $cases = $query->get();
+
+        // Ambil daftar jenis_cases unik untuk dropdown
+        $jenisCasesList = Cases::where('departement', 'ITDept')->select('jenis_cases')->distinct()->pluck('jenis_cases');
+
+        return view('layouts.ITDept.Direktur.casesType.index', compact('user', 'cases', 'filterJenisCases', 'jenisCasesList'));
+        
     }
 }
