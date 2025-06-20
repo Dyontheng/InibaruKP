@@ -55,9 +55,9 @@
                                         <td>{{ $case->jenis_cases }}</td>
                                         <td>{{ $case->departement }}</td>
                                         <td>
-                                            <a href="{{ route('casesAdmin.edit', $case->id) }}"
+                                            <a href="{{ route('casesOperator.edit', $case->id) }}"
                                                 class="btn btn-primary btn-sm mb-2">Edit</a>
-                                            <form action="{{ route('casesAdmin.destroy', $case->id) }}" method="POST"
+                                            <form action="{{ route('casesOperator.destroy', $case->id) }}" method="POST"
                                                 style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
