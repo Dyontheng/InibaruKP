@@ -1,4 +1,4 @@
-@extends('Master.masterDokumen')
+@extends('Master.masterDokumenOperator')
 @section('content')
 <div class="container">
     <div class="row">
@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('dokumenAdmin.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dokumenOperator.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -115,7 +115,7 @@
                         <button type="submit" class="btn btn-success btn-primary shadow-sm bg-green"
                             style="background-color: green;">Add Document</button>
 
-                        <a href="{{ route('dokumenAdmin.index') }}"
+                        <a href="{{ route('dokumenOperator.index') }}"
                             class="btn btn-auto btn-primary shadow-sm">
                             <span class="text">Back</span>
                         </a>

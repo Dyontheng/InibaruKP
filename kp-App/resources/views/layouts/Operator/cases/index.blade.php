@@ -8,7 +8,7 @@
         <div class="card-header py-3">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-0">
-                <a href="{{ route('casesAdmin.create') }}" class="btn btn-auto  btn-primary shadow-sm">
+                <a href="{{ route('casesOperator.create') }}" class="btn btn-auto  btn-primary shadow-sm">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus-square"></i>
                     </span>
@@ -23,21 +23,23 @@
             <h1>Dokumen Cases</h1>
             <div class="d-sm-flex align-items-center justify-content-between mb-0">
 
-                <div class="table-responsive mt-3">
+                <div class="table mt-3">
                     <table class="display" id="basic-1">
                         <thead>
                             <tr>
                                 <th>Cases No.</th>
                                 <th>Cases Names</th>
                                 <th>Cases Date</th>
-                                <th>Cases Type</th>
-                                <th>Remarks</th>
-                                <th>Cases Hope</th>
+                                <th>Site Location</th>
+                                <th>Status Cases</th>
+                                <th>Info Cases</th>
                                 <th>Document</th>
-                                <th>Type Name</th>
+                                <th>Jenis Cases</th>
+                                <th>Departement</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
-                         <tbody>
+                        <tbody>
                             @forelse ($cases as $case)
                                 <tr>
                                     <td>{{ $case->no_cases }}</td>
@@ -46,9 +48,22 @@
                                     <td>{{ $case->site_cases }}</td>
                                     <td>{{ $case->status_cases }}</td>
                                     <td>{{ $case->info_cases }}</td>
-                                    <td>{{ $case->doc_cases }}</td>
+                                    <td>
+                                            <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}"
+                                                target="_blank">
+                                                {{ basename($case->doc_cases) }}
+                                            </a>
+                                        </td>
                                     <td>{{ $case->jenis_cases }}</td>
                                     <td>{{ $case->departement }}</td>
+                                    <td>
+                                        <a href="{{ route('casesOperator.edit', $case->id) }}" class="btn btn-primary btn-sm mb-2">Edit</a>
+                                        <form action="{{ route('casesOperator.destroy', $case->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus dokumen ini?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @empty
                                 <tr>
@@ -58,7 +73,6 @@
                         </tbody>
                         
                     </table>
-                    {{-- {{ $anggotas->links() }} --}}
                 </div>
 
 
