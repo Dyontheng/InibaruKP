@@ -122,7 +122,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenAdmin">Document</a></li>
                                 <li><a href="/dokumenTypeAdmin">Dokumen Type</a></li>
-                                <li><a href="/siteLocationAdmin">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationAdmin">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -166,7 +166,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturIT" class="fas fa-archive">Document</a></li>
                                 <li><a href="/TypedirekturIT" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturIT" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturIT" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -208,7 +208,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerIT" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeManagerIT" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerIT" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerIT" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -237,7 +237,6 @@
                             <a class="nav-link menu-title"><span>Legal Reporting</span></a>
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenExpiredStaffIT" class="fas fa-archive">Document Expired</a></li>
-                                <li><a href="/" class="fas fa-archive">Document History</a></li>
                             </ul>
                         <li class="dropdown">
                             <a class="nav-link menu-title"><span>Case Transaction</span></a>
@@ -251,7 +250,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenStaffIT" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeStaffIT" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffIT" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffIT" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -292,7 +291,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturlegalDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeDirekturLegalDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturLegalDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturLegalDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -334,7 +333,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerlegalDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeManagerLegalDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerLegalDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerLegalDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -376,7 +375,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/StafflegalDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeStaffLegalDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffLegalDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffLegalDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -418,7 +417,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturHrDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeDirekturHrDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturHrDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturHrDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -459,7 +458,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerHrDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeManagerHrDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerHrDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerHrDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -500,7 +499,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenStaffHrDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeStaffHrDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffHrDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffHrDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -541,7 +540,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturExportDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeDirekturExportDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturExportDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturExportDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -582,7 +581,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerExportDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/TypeManagerExportDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerExportDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerExportDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -624,7 +623,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenStaffExportDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/TypeStaffExportDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffExportDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffExportDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -665,7 +664,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturPurchDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeDirekturPurchDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturPurchDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturPurchDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -706,7 +705,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerPurchDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeManagerPurchDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerPurchDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerPurchDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -734,7 +733,7 @@
                             <a class="nav-link menu-title"><span>Legal Reporting</span></a>
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenExpiredStaffPurch" class="fas fa-archive">Document Expired</a></li>
-                                <li><a href="/" class="fas fa-archive">Document History</a></li>
+                              
                             </ul>
                         <li class="dropdown">
                             <a class="nav-link menu-title"><span>Case Transaction</span></a>
@@ -748,7 +747,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenStaffPurchDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeStaffPurchDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffPurchDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffPurchDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -790,7 +789,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenDirekturFinanceDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeDirekturFinanceDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationDirekturFinanceDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationDirekturFinanceDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -818,7 +817,7 @@
                             <a class="nav-link menu-title"><span>Legal Reporting</span></a>
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenExpiredManagerFinance" class="fas fa-archive">Document Expired</a></li>
-                                <li><a href="/" class="fas fa-archive">Document History</a></li>
+                
                             </ul>
                         <li class="dropdown">
                             <a class="nav-link menu-title"><span>Case Transaction</span></a>
@@ -832,7 +831,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenManagerFinanceDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/TypeManagerFinanceDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationManagerFinanceDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationManagerFinanceDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -875,7 +874,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenStaffFinanceDept" class="fas fa-archive">Document</a></li>
                                 <li><a href="/TypeStaffFinanceDept" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationStaffFinanceDept" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationStaffFinanceDept" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
@@ -916,7 +915,7 @@
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="/dokumenOperator" class="fas fa-archive">Document</a></li>
                                 <li><a href="/dokumenTypeOperator" class="fas fa-archive">Dokumen Type</a></li>
-                                <li><a href="/siteLocationOperator" class="fas fa-archive">Site Location</a></li>
+                                {{-- <li><a href="/siteLocationOperator" class="fas fa-archive">Site Location</a></li> --}}
                             </ul>
 
                         </li>
