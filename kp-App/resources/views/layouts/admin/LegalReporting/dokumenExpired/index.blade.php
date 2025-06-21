@@ -4,20 +4,6 @@
         @if (session('success'))
             <p style="color: green;">{{ session('success') }}</p>
         @endif
-        {{-- <div class="card shadow m-6">
-            <div class="card-header py-3">
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-0">
-                    <a href="{{ route('dokumenAdmin.create') }}" class="btn btn-auto  btn-primary shadow-sm">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-plus-square"></i>
-                        </span>
-                        <span class="text">Tambah Dokumen</span>
-                    </a>
-
-                </div>
-            </div> --}}
-
             <div class="card-body py-3">
                 {{-- <h1>Anggota {{ $ukm->nama_ukm }}</h1> --}}
                 <h1>Dokumen</h1>

@@ -20,7 +20,7 @@ class DokumenTypeOperatorController extends Controller
             $documents = Document::where('jenis_data', $filter)->get();
         } else {
             // Kalau tidak ada filter, kosongkan hasil
-            $documents = collect(); // koleksi kosong
+            $documents = Document::all();// koleksi kosong
         }
         return view('layouts.Operator.dokumenMaster.dokumenType.index', compact('user', 'documents'));
     

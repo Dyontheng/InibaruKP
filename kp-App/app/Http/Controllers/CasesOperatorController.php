@@ -104,6 +104,7 @@ class CasesOperatorController extends Controller
         $case = Cases::findOrFail($id);
         $case->update($request->all());
 
+    
         return redirect()->route('casesOperator.index')->with('success', 'Data Cases berhasil diperbarui!');
     }
 

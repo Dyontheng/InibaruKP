@@ -1,30 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use App\Models\Cases;
 
-class CasesTypeAdminController extends Controller
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Document;
+use Carbon\Carbon;
+
+class DokumenExpiredOperator extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $user = Auth::user();
-         $filter = $request->query('filter');
-        $cases = Cases::all();
+         $user = Auth::user();
+        $today = Carbon::today();
 
-        
-        // Jika filter dipilih, ambil hanya dokumen dengan document_type tertentu
-        if ($filter) {
-            $cases = cases::where('jenis_cases', $filter)->get();
-       
-        }
-        return view('layouts.admin.casesType.index', compact('user', 'cases'));
-        return view('admin.', compact('Cases'));
-        
+        // Ambil dokumen yang sudah expired
+        $expiredDocuments = Document::whereDate('expired_date', '<=', $today)->get();
+        return view('layouts.Operator.LegalReporting.dokumenExpired.index', compact('user', 'expiredDocuments'));
     }
 
     /**

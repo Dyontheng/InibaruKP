@@ -901,7 +901,7 @@
                         <li class="dropdown">
                             <a class="nav-link menu-title"><span>Legal Reporting</span></a>
                             <ul class="nav-submenu menu-content" style="">
-                                <li><a href="/" class="fas fa-archive">Document Expired</a></li>
+                                <li><a href="/dokumenExpiredOperator" class="fas fa-archive">Document Expired</a></li>
                             </ul>
                         <li class="dropdown">
                             <a class="nav-link menu-title"><span>Case Transaction</span></a>

@@ -20,7 +20,7 @@ class DokumenTypeAdminController extends Controller
             $documents = Document::where('jenis_data', $filter)->get();
         } else {
             // Kalau tidak ada filter, kosongkan hasil
-            $documents = collect(); // koleksi kosong
+            $documents = Document::all();
         }
         return view('layouts.admin.dokumenMaster.dokumenType.index', compact('user', 'documents'));
     }

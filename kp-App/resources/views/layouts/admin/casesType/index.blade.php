@@ -39,7 +39,7 @@
                                     <th>Document</th>
                                     <th>Jenis Cases</th>
                                     <th>Departement</th>
-                                    <th>Aksi</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,20 +51,14 @@
                                         <td>{{ $case->site_cases }}</td>
                                         <td>{{ $case->status_cases }}</td>
                                         <td>{{ $case->info_cases }}</td>
-                                        <td>{{ $case->doc_cases }}</td>
+                                        <td>
+                                            <a href="{{ asset('storage/dokumen_cases/' . $case->doc_cases) }}"
+                                                target="_blank">
+                                                {{ basename($case->doc_cases) }}
+                                            </a>
+                                        </td>
                                         <td>{{ $case->jenis_cases }}</td>
                                         <td>{{ $case->departement }}</td>
-                                        <td>
-                                            <a href="{{ route('casesAdmin.edit', $case->id) }}"
-                                                class="btn btn-primary btn-sm mb-2">Edit</a>
-                                            <form action="{{ route('casesAdmin.destroy', $case->id) }}" method="POST"
-                                                style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-danger btn-sm"
-                                                    onclick="return confirm('Yakin ingin menghapus dokumen ini?')">Delete</button>
-                                            </form>
-                                        </td>
                                     </tr>
                                 @empty
                                     <tr>

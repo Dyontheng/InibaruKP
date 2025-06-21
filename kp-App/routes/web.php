@@ -117,11 +117,13 @@ use App\Http\Controllers\CasesTypeDirekturPurchController;
 use App\Http\Controllers\CasesTypeManagerPurchController;
 use App\Http\Controllers\CasesTypeStaffPurchController;
 
+use App\Http\Controllers\CasesTypeOperatorController;
 
 
 
 
 
+use App\Http\Controllers\DokumenExpiredOperatorController;
 use App\Http\Controllers\DokumenExpiredController;
 use App\Http\Controllers\DokumenExpiredDirekturExportController;
 use App\Http\Controllers\DokumenExpiredManagerExportController;
@@ -282,11 +284,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('/casesTypeManagerPurch',   CasesTypeManagerPurchController::class);
     Route::resource('/casesTypeStaffPurch',   CasesTypeStaffPurchController::class);
    
+    Route::resource('/casesTypeOperator', CasesTypeOperatorController::class);
    
    
     //Expired
 
     Route::resource('/dokumenExpiredAdmin', DokumenExpiredController::class);
+
+    Route::resource('/dokumenExpiredOperator', DokumenExpiredController::class);
 
     Route::resource('/dokumenExpiredDirekturexport',  DokumenExpiredDirekturExportController::class);
     Route::resource('/dokumenExpiredManagerexport',  DokumenExpiredManagerExportController::class);

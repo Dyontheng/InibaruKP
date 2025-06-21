@@ -15,17 +15,14 @@ class DokumenAdminController extends Controller
     {
         $user = Auth::user();
         $today = Carbon::today();
-        $documents = Document::all();
 
-        // Ambil dokumen yang belum expired dan masih dalam masa reminder
-        $documents = Document::whereDate('expired_date', '>', $today)
-            ->get()
-            ->filter(function ($doc) use ($today) {
-                $selisihHari = Carbon::parse($doc->expired_date)->diffInDays($today, false);
-                return $selisihHari <= $doc->reminder_days; // reminder aktif
-            });
+        $documents = Document::all()->map(function ($doc) use ($today) {
+            $selisihHari = Carbon::parse($doc->expired_date)->diffInDays($today, false);
+            $doc->in_reminder = $selisihHari <= $doc->reminder_days && Carbon::parse($doc->expired_date)->greaterThan($today);
+            return $doc;
+        });
+
         return view('layouts.admin.dokumenMaster.dokumen.index', compact('user', 'documents'));
-        return view('admin.', compact('document'));
     }
 
     /**
@@ -58,7 +55,7 @@ class DokumenAdminController extends Controller
             $file = $request->file('document_type');
             $originalNameFileDokumen = $file->getClientOriginalName();
             $fileDokumenTipePath = $file->storeAs('dokumen_tipe', $originalNameFileDokumen, 'public');
-            $validateData['document_type'] = $originalNameFileDokumen;            
+            $validateData['document_type'] = $originalNameFileDokumen;
         }
 
         $user = Auth::user();
